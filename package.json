@@ -1,0 +1,19 @@
+{
+  "name": "execrise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ANTH-77-DEVPTIT/execrise.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ANTH-77-DEVPTIT/execrise/issues"
+  },
+  "homepage": "https://github.com/ANTH-77-DEVPTIT/execrise#readme"
+}
