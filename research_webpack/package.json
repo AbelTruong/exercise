@@ -1,0 +1,31 @@
+{
+  "name": "arena-storefront-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "webpack --watch",
+    "build": "rm -rf dist && webpack",
+    "copy": "gulp"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@shopify/theme-sections": "^4.0.2",
+    "gulp": "^4.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
+    "html-webpack-plugin": "^4.5.0",
+    "mini-css-extract-plugin": "^0.11.2",
+    "sass": "^1.26.11",
+    "sass-loader": "^10.0.2",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "engines": {
+    "node": ">=16.x.x"
+  }
+}

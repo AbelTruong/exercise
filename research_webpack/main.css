@@ -1,0 +1,843 @@
+body .ayfs div:empty {
+  display: block !important;
+}
+
+.ayfs {
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+.ayfs a,
+.ayfs a:link,
+.ayfs a:active,
+.ayfs a:visited {
+  text-decoration: none;
+}
+
+.ayfs a:hover {
+  text-decoration: underline;
+}
+
+.ayfs img {
+  margin: 0;
+  padding: 0;
+  min-width: unset;
+  min-height: unset;
+  max-width: unset;
+  max-height: unset;
+}
+
+.ayfs ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ayfs ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.ayfs ::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 5px;
+}
+
+.ayfs ::-webkit-scrollbar-thumb:hover {
+  background: #171717;
+}
+
+.ayfs .divider {
+  width: 3px;
+  height: 3px;
+  min-width: 3px;
+  min-height: 3px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.ayfs .ayfs-banner {
+  width: 100%;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ayfs .ayfs-logo {
+  margin-bottom: 20px;
+}
+
+.ayfs .ayfs-logo img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.ayfs .ayfs-subscribe-button {
+  display: flex;
+  align-items: stretch;
+  font-size: 13px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.ayfs .ayfs-subscribe-button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.ayfs .ayfs-subscribe-button a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.ayfs .ayfs-subscribe-button .youtube-logo {
+  background-color: #e62117;
+  color: #fff;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ayfs .ayfs-subscribe-button .youtube-logo:hover {
+  background-color: #cc181e;
+}
+
+.ayfs .ayfs-subscribe-button svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.ayfs .ayfs-subscribe-button .subscribers-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  color: #737373;
+}
+
+.ayfs .ayfs-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.ayfs .ayfs-header .header-information {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px 20px;
+}
+
+.ayfs .ayfs-header .header-information .channel-name {
+  font-weight: 500;
+  display: -webkit-box !important;
+  overflow: hidden;
+  word-wrap: break-word;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  height: 28px;
+  margin-bottom: 8px;
+}
+
+.ayfs .ayfs-header .header-information .channel-name a {
+  font-size: 20px;
+}
+
+.ayfs .ayfs-header .header-information .channel-description {
+  display: -webkit-box !important;
+  overflow: hidden;
+  word-wrap: break-word;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 36.4px;
+  margin-bottom: 8px;
+}
+
+.ayfs .ayfs-header .header-information .information-counter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.ayfs .ayfs-header .header-information .information-counter > div {
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ayfs .ayfs-header-accent {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ayfs .ayfs-header-accent .header-information {
+  align-items: center;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.ayfs .ayfs-header-accent .header-information .information-counter {
+  justify-content: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .ayfs .ayfs-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ayfs .ayfs-header .header-information {
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .ayfs .ayfs-header .header-information .channel-description {
+    align-items: center;
+  }
+
+  .ayfs .ayfs-header .header-information .information-counter {
+    justify-content: center;
+  }
+}
+
+.ayfs .ayfs-video-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  position: relative;
+  width: 100%;
+}
+
+.ayfs .ayfs-video-card .thumbnail {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* height: 200px; */
+}
+
+.ayfs .ayfs-video-card-settings-3 .thumbnail {
+  height: 480px;
+}
+
+.ayfs .ayfs-video-card .thumbnail .play-icon {
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+  opacity: 0.4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ayfs .ayfs-video-card .thumbnail:hover .play-icon {
+  opacity: 0.8;
+}
+
+.ayfs .ayfs-video-card .thumbnail .play-icon svg,
+.ayfs .ayfs-video-card .thumbnail .play-icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.ayfs .ayfs-video-card .thumbnail .duration {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 3px 6px;
+  border-radius: 2px;
+  font-size: 12px;
+  z-index: 2;
+}
+
+.ayfs .ayfs-video-card .video-infomation .title {
+  margin: 5px 0;
+  font-weight: 500;
+  display: -webkit-box !important;
+  overflow: hidden;
+  word-wrap: break-word;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  font-size: 14px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 42px;
+}
+
+.ayfs .ayfs-video-card .video-infomation .publish-time {
+  margin-bottom: 5px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.ayfs .ayfs-video-card .video-infomation .description {
+  display: -webkit-box !important;
+  overflow: hidden;
+  word-wrap: break-word;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  font-size: 13px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 36.4px;
+  margin-bottom: 5px;
+}
+
+.ayfs .ayfs-video-card .video-infomation .statistics {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.ayfs .ayfs-video-card .video-infomation .statistics > div {
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ayfs .ayfs-video-card:hover {
+  cursor: pointer;
+}
+
+.ayfs .ayfs-video-card:hover .ayfs-thumbnail .play-icon {
+  opacity: 1;
+}
+
+.ayfs .ayfs-video-card:hover .video-infomation .title {
+  text-decoration: underline;
+}
+
+.ayfs .ayfs-video-card-horizontal {
+  flex-direction: row;
+}
+
+.ayfs .ayfs-video-card-horizontal .ayfs-thumbnail {
+  position: relative;
+  width: 240px;
+  height: 135px;
+  max-width: 240px;
+  max-height: 135px;
+}
+
+.ayfs .ayfs-video-card-horizontal .ayfs-thumbnail img {
+  width: 240px;
+  height: 135px;
+  object-fit: cover;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ayfs .ayfs-video-card-horizontal .video-infomation {
+  padding-left: 15px;
+}
+
+.ayfs .ayfs-video-card-horizontal .video-infomation .title {
+  -webkit-line-clamp: 1;
+  height: 24px;
+}
+
+.ayfs .ayfs-video-card-cinema .video-infomation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  z-index: -1;
+  padding: 10px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+@media only screen and (max-width: 600px) {
+  .ayfs .ayfs-video-card-horizontal {
+    flex-direction: column;
+  }
+
+  .ayfs .ayfs-video-card-horizontal .ayfs-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ayfs .ayfs-video-card-horizontal .ayfs-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: none;
+  }
+
+  .ayfs .ayfs-video-card-horizontal .video-infomation {
+    padding-left: 0;
+  }
+
+  .ayfs .ayfs-video-card-horizontal .video-infomation .title {
+    -webkit-line-clamp: 2;
+    height: 42px;
+  }
+
+  .ayfs .ayfs-video-card-cinema .video-infomation {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+  }
+}
+
+.ayfs .ayfs-videos-playlist {
+  position: relative;
+}
+
+.ayfs .ayfs-videos-playlist .yt-feed-slider .video-list-column .video-list-item {
+  flex: 1;
+  display: flex;
+}
+
+.ayfs .ayfs-videos-playlist .ayfs-pagi-btn {
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0.6;
+  height: 40px;
+  width: 40px;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  position: absolute;
+}
+
+.ayfs .ayfs-videos-playlist .ayfs-pagi-btn svg {
+  width: 12px;
+  height: 12px;
+}
+
+.ayfs .ayfs-videos-playlist .ayfs-pagi-btn:hover {
+  opacity: 1;
+}
+
+.ayfs .ayfs-videos-playlist .ayfs-pagi-btn:active {
+  transform: scale(0.9);
+  transition: 0.1s;
+}
+
+.ayfs .ayfs-videos-playlist .ayfs-pagi-btn-previous {
+  position: absolute;
+  top: calc(50% - 20px);
+  left: 10px;
+}
+
+.ayfs .ayfs-videos-playlist .ayfs-pagi-btn-next {
+  position: absolute;
+  top: calc(50% - 20px);
+  right: 10px;
+}
+
+.ayfs .ayfs-videos-playlist .ayfs-pagi-btn-up {
+  position: absolute;
+  top: 10px;
+  left: calc(50% - 20px);
+}
+
+.ayfs .ayfs-videos-playlist .ayfs-pagi-btn-down {
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 20px);
+}
+
+/*
+ * START POPUP
+ */
+.ayfs-popup-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  overflow-y: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.ayfs-popup-margin {
+  display: flex;
+  flex: 1;
+}
+
+.ayfs-popup-wrapper-padding {
+  flex: 1;
+}
+
+.ayfs-popup-wrapper-body {
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+  padding-bottom: 1em;
+}
+
+.ayfs-popup-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 10px 20px 20px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.ayfs-popup-header svg {
+  width: 20px;
+  height: 20px;
+}
+
+.ayfs-popup-header svg:active {
+  transform: scale(0.9);
+  transition: 0.1s;
+}
+
+.ayfs-popup-header:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .ayfs-popup-body {
+    padding: 0;
+  }
+}
+
+.ayfs-popup-video-overlay {
+  width: 100%;
+  max-width: 1000px;
+  height: calc((100vw - 40px) * 315 / 560);
+  max-height: calc(1000px * 315 / 560);
+  background-color: rgba(0, 0, 0, 0.8);
+  margin: auto;
+}
+
+.ayfs-popup-body .video-info {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.ayfs-popup-body .video-info .video-info-header {
+  border-bottom: 1px solid #dcdcdc;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.ayfs-popup-body .video-info .video-info-header .video-info-title {
+  font-size: 1.4em;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.ayfs-popup-body .video-info .video-info-header .video-info-description {
+  margin-bottom: 20px;
+  color: #171717;
+}
+
+.ayfs-popup-body .video-info .video-info-header .video-info-statistics {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.ayfs-popup-body .video-info .video-info-header .video-info-statistics .view-count {
+  display: flex;
+  align-items: center;
+}
+
+.ayfs-popup-body .video-info .video-info-header .video-info-statistics .view-count .video-publish {
+  font-size: 12px;
+  color: #777;
+}
+
+.ayfs-popup-body .video-info .video-info-header .video-info-statistics .view-count .divider {
+  background-color: #777;
+}
+
+.ayfs-popup-body .video-info .video-info-header .video-info-statistics .more {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.ayfs-popup-body .video-info .video-info-header .video-info-statistics .more .likes-count,
+.ayfs-popup-body .video-info .video-info-header .video-info-statistics .more .dislikes-count,
+.ayfs-popup-body .video-info .video-info-header .video-info-statistics .more .share {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.ayfs-popup-body .video-info .video-info-header .video-info-statistics .more .share {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.ayfs-popup-body .video-info .video-info-header .video-info-statistics .more svg {
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+}
+
+.ayfs-popup-body .video-info .channel-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.ayfs-popup-body .video-info .channel-info .channel-info-more {
+  flex: 1;
+  margin: 0 20px 20px;
+}
+
+.ayfs-popup-body .video-info .channel-info .channel-info-more .channel-name {
+  margin-bottom: 10px;
+}
+
+.ayfs-popup-body .video-info .channel-info .channel-info-more .channel-name a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.ayfs-popup-body .video-info .channel-info .channel-info-more .channel-name a:hover {
+  color: rgb(6, 95, 212);
+}
+
+.ayfs-popup-body
+  .video-info
+  .channel-info
+  .channel-info-more
+  .channel-description
+  .channel-description-content {
+  margin-bottom: 20px;
+  display: -webkit-box !important;
+  overflow: hidden;
+  word-wrap: break-word;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  line-height: 1.6;
+  font-size: 13px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 36.4px;
+}
+
+.ayfs-popup-body
+  .video-info
+  .channel-info
+  .channel-info-more
+  .channel-description
+  .channel-description-content-show-more {
+  -webkit-line-clamp: unset;
+  height: auto;
+}
+
+.ayfs-popup-body .video-info .channel-info .channel-info-more .show-more {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #777;
+  margin-top: 20px;
+}
+
+/*
+ * ----------------------------------------------
+ * START POPUP VIDEO COMMENTS
+ */
+
+.ayfs-popup-comments {
+  background-color: #fff;
+  padding: 0 20px 20px;
+}
+
+.ayfs-popup-comments-count {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 30px;
+  border-top: 1px solid #dcdcdc;
+  padding-top: 10px;
+}
+
+.yta-popup-comments-item {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.yta-popup-comments-user-avatar {
+  width: 50px;
+  cursor: pointer;
+}
+
+.yta-popup-comments-user-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.yta-popup-comments-details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.yta-popup-comments-details-head {
+  display: flex;
+  align-items: baseline;
+}
+
+.yta-popup-comments-user-name {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.yta-popup-comments-user-name:hover {
+  color: rgb(6, 95, 212);
+  text-decoration: underline;
+}
+
+.yta-popup-comments-timestamp {
+  font-size: 0.9em;
+  color: #666;
+  margin-left: 10px;
+}
+
+.yta-popup-comments-content {
+  margin-bottom: 10px;
+}
+
+.yta-popup-comments-actions {
+  display: flex;
+  align-items: center;
+}
+
+.yta-popup-comments-like,
+.yta-popup-comments-dislike {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.yta-popup-comments-like svg,
+.yta-popup-comments-dislike svg {
+  width: 14px;
+  height: 14px;
+}
+
+.yta-popup-comments-like-count,
+.yta-popup-comments-dislike-count {
+  font-size: 0.9em;
+  color: #666;
+  margin-left: 5px;
+}
+
+.ayfs-popup-comments-show-more {
+  color: rgb(6, 95, 212);
+  cursor: pointer;
+}
+
+.ayfs-popup-comments-show-more:hover {
+  text-decoration: underline;
+}
+
+/*
+ * END POPUP VIDEO COMMENTS
+ * ----------------------------------------------
+ */
+
+@media only screen and (max-width: 600px) {
+  .ayfs-popup-body .video-info .channel-info {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+
+  .ayfs-popup-body .video-info .channel-info .channel-info-more {
+    text-align: center;
+  }
+
+  .ayfs-popup-header {
+    justify-content: center;
+  }
+}
+
+.yta-popup-show {
+  overflow: hidden;
+}
+
+.yta-popup-show #PageContainer {
+  transform: none !important;
+}
+
+/* ---------------------------------------------- */
+/* START CUSTOMIZE FOR SPECIFIC STORES */
+
+/* Hide fixed menu on mobile when popup show */
+/* Store: agilitegear.myshopify.com */
+@media screen and (max-width: 768px) {
+  .yta-popup-show #header {
+    z-index: 0;
+  }
+}
+
+/* END CUSTOMIZE FOR SPECIFIC STORES */
+/* ---------------------------------------------- */
