@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/ANTH-77-DEVPTIT/execrise/issues"
   },
-  "homepage": "https://github.com/ANTH-77-DEVPTIT/execrise#readme"
+  "homepage": "https://github.com/ANTH-77-DEVPTIT/execrise#readme",
+  "devDependencies": {}
 }
