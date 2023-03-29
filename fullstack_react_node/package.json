@@ -1,0 +1,20 @@
+{
+  "name": "fullstack_react_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prettier:code": "prettier \"**/*.{js,jsx}\"",
+    "prettier:other": "prettier \"**/*.{md,css,scss,yaml,yml}\"",
+    "format:code": "npm run prettier:code -- --write",
+    "format:other": "npm run prettier:other -- --write",
+    "format": "npm-run-all -p format:*"
+  },
+  "author": "Abel Truong",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.8.7"
+  },
+  "dependencies": {}
+}
