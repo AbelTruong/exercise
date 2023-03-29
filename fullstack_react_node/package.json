@@ -8,7 +8,8 @@
     "prettier:other": "prettier \"**/*.{md,css,scss,yaml,yml}\"",
     "format:code": "npm run prettier:code -- --write",
     "format:other": "npm run prettier:other -- --write",
-    "format": "npm-run-all -p format:*"
+    "format": "npm-run-all -p format:*",
+    "gulp": "gulp"
   },
   "author": "Abel Truong",
   "license": "ISC",
@@ -16,5 +17,8 @@
     "npm-run-all": "^4.1.5",
     "prettier": "2.8.7"
   },
-  "dependencies": {}
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "gulp": "^4.0.2"
+  }
 }
