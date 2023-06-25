@@ -1,0 +1,51 @@
+{
+  "name": "arena-boilerplate-app",
+  "version": "1.0.0",
+  "main": "web/index.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "shopify": "shopify",
+    "build": "shopify app build",
+    "dev": "shopify app dev",
+    "info": "shopify app info",
+    "generate": "shopify app generate",
+    "deploy": "shopify app deploy",
+    "serve": "gulp && cd web/ && yarn serve",
+    "server": "gulp && cd web/ && yarn server",
+    "ngrok": "ngrok http --subdomain=arena-app-tha --region=jp 5000",
+    "docker": "docker run --rm -p 127.0.0.1:6379:6379/tcp redis",
+    "develop": "gulp && yarn dev --tunnel-url https://arena-app-tha.jp.ngrok.io:5000",
+    "install_depend:backend": "cd web/ && yarn",
+    "install_depend:frontend": "cd web/frontend/ && yarn",
+    "install_depend": "yarn && npm-run-all -p install_depend:*",
+    "remove_depend:root": "rm -rf node_modules/ yarn.lock package-lock.json",
+    "remove_depend:backend": "cd web/ && rm -rf node_modules/ yarn.lock package-lock.json",
+    "remove_depend:frontend": "cd web/frontend/ && rm -rf node_modules/ yarn.lock package-lock.json",
+    "remove_depend": "npm-run-all -p remove_depend:*",
+    "prettier:code": "prettier \"**/*.{js,jsx}\"",
+    "prettier:other": "prettier \"**/*.{md,css,scss,yaml,yml}\"",
+    "format:code": "npm run prettier:code -- --write",
+    "format:other": "npm run prettier:other -- --write",
+    "format": "npm-run-all -p format:*",
+    "pm2:start": "pm2 kill && yarn build && pm2 start ecosystem.config.js --env production",
+    "pm2:restart": "pm2 stop 0 && yarn build && pm2 restart ecosystem.config.js --env production",
+    "pm2:reload": "pm2 reload ecosystem.config.js --env production"
+  },
+  "dependencies": {
+    "@shopify/app": "3.46.5",
+    "@shopify/cli": "3.46.5",
+    "bullmq": "^3.15.8",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "morgan": "^1.10.0"
+  },
+  "author": "huupham.arena",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.7"
+  },
+  "engines": {
+    "node": ">=16.x.x"
+  }
+}

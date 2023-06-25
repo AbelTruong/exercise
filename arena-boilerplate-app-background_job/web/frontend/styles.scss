@@ -1,0 +1,209 @@
+:root {
+  --textColor: #454f5b;
+  --noteColor: #5b6878;
+  --linkColor: #006fbb;
+  --linkColorHover: #084e8a;
+  --linkColorDark: #084e8a;
+  --successColor: #008060;
+  --successColorDark: #005e46;
+  --successColorLight: #c4f1ce;
+  --errorColor: #d82c0d;
+  --errorColorDark: #a8220a;
+  --errorColorLight: #fae3e5;
+  --warningColor: #ffc453;
+  --warningColorDark: #ffb320;
+  --warningColorLight: #fff0d3;
+
+  --border: 1px solid #dcdcdc;
+  --borderWidth: 1px;
+  --borderColor: #dcdcdc;
+  --borderStyle: solid;
+
+  --spacing: 1em;
+  --spacingSmall: 0.5em;
+  --spacingLarge: 2em;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+#app {
+  margin: auto;
+  padding: 0 0 4em;
+}
+
+b {
+  font-weight: 600;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+// color
+.color {
+  &__text {
+    color: var(--textColor) !important;
+
+    .Polaris-Icon {
+      margin: unset;
+
+      svg {
+        fill: var(--textColor);
+      }
+    }
+  }
+
+  &__note {
+    color: var(--noteColor) !important;
+
+    .Polaris-Icon {
+      margin: unset;
+
+      svg {
+        fill: var(--noteColor);
+      }
+    }
+  }
+
+  &__success {
+    color: var(--successColor) !important;
+
+    .Polaris-Icon {
+      margin: unset;
+
+      svg {
+        fill: var(--successColor);
+      }
+    }
+  }
+
+  &__error {
+    color: var(--errorColor) !important;
+
+    .Polaris-Icon {
+      margin: unset;
+
+      svg {
+        fill: var(--errorColor);
+      }
+    }
+  }
+
+  &__warning {
+    color: var(--warningColor) !important;
+
+    .Polaris-Icon {
+      margin: unset;
+
+      svg {
+        fill: var(--warningColor);
+      }
+    }
+  }
+
+  &__link {
+    color: var(--linkColor) !important;
+
+    .Polaris-Icon {
+      margin: unset;
+
+      svg {
+        fill: var(--linkColor);
+      }
+    }
+  }
+}
+
+.table-block {
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.9em;
+    white-space: nowrap;
+  }
+
+  th,
+  td {
+    border: 1px solid #dcdcdc;
+    padding: 0.5em;
+
+    &.center-align {
+      text-align: center;
+    }
+  }
+
+  thead tr {
+    background: #f1f1f1;
+  }
+
+  &__white {
+    background: #ffffff;
+  }
+}
+
+/* CUSTOM POLARIS STYLES */
+.Polaris-DataTable {
+  thead {
+    background-color: #f1f1f1;
+
+    th {
+      font-weight: 600;
+    }
+  }
+}
+
+.Card-Title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.Polaris-DisplayText {
+  &--sizeSmall {
+    font-size: 1.2rem;
+  }
+}
+
+.Polaris-DataTable__Navigation {
+  display: none !important;
+}
+
+.Polaris-Banner {
+  &__loading {
+    .Polaris-Banner {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .Polaris-Banner__Ribbon {
+      display: none !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  #app {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #app {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  #app {
+    padding-left: 6em;
+    padding-right: 6em;
+  }
+}

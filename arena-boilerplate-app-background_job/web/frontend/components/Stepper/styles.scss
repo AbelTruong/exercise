@@ -1,0 +1,30 @@
+.Stepper {
+  padding: 1em 0;
+
+  .StepIcon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > div {
+      height: 30px;
+      width: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid var(--noteColor);
+      border-radius: 50%;
+      font-weight: 500;
+    }
+  }
+
+  .Polaris-Icon {
+    height: 38px;
+    width: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
