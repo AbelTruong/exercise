@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 0 40px;
+    gap: 0 7%;
 
     &--content {
         width: 100%;
@@ -18,7 +18,8 @@
         .desc {
             font-size: 16px;
             color: $text-color;
-            padding-bottom: 30px;
+            padding: 20px 0;
+            line-height: calc(70/50);
         }
     }
 

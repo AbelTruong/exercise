@@ -167,7 +167,7 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 0 40px;
+  gap: 0 7%;
 }
 .hero__banner--content {
   width: 100%;
@@ -181,7 +181,8 @@ button {
 .hero__banner--content .desc {
   font-size: 16px;
   color: #4f5665;
-  padding-bottom: 30px;
+  padding: 20px 0;
+  line-height: 1.4;
 }
 .hero__banner__image {
   max-width: 612px;
@@ -189,6 +190,43 @@ button {
   top: 45%;
   transform: translate(-40px, -50%);
   right: 0;
+}
+
+.intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 30px 0;
+  margin: 50px auto;
+}
+.intro--item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0 30px;
+  padding: 20px 0;
+  width: 100%;
+}
+.intro--item .intro__icon {
+  width: 55px;
+  height: 55px;
+}
+.intro--item .intro__info .intro--title {
+  font-weight: bold;
+  font-size: 25px;
+  color: #0b132a;
+  padding-bottom: 10px;
+}
+.intro--item .intro__info .intro--text {
+  font-size: 20px;
+  color: #4f5665;
+}
+.intro--item:not(:last-child) {
+  border-right: 1px solid #eeeff2;
 }
 
 /*# sourceMappingURL=app.css.map */
