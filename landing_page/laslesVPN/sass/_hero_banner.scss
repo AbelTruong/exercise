@@ -1,5 +1,6 @@
 .hero__banner {
-    padding: 100px 0;
+    padding-top: 100px;
+    padding-bottom: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -8,6 +9,9 @@
     &--content {
         width: 100%;
         max-width: 555px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
 
         .title {
             font-size: 50px;
@@ -18,8 +22,7 @@
         .desc {
             font-size: 16px;
             color: $text-color;
-            padding: 20px 0;
-            line-height: calc(70/50);
+            line-height: calc(100/50);
         }
     }
 

@@ -1,0 +1,58 @@
+.feature {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16%;
+    padding: 30px 0;
+
+    &__image {
+        max-width: 500px;
+    }
+
+    &__content {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    &--heading {
+        font-size: 35px;
+        font-weight: normal;
+        color: $heading-color;
+        line-height: calc(30 / 20);
+    }
+
+    &--desc {
+        color: $text-color;
+        line-height: calc(30 / 20);
+        padding: 24px 0;
+    }
+
+    &--details {
+        display: flex;
+        flex-direction: column;
+        gap: 16px 0;
+
+        .feature__item {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            align-items: center;
+
+            .icon--checked {
+                width: 20px;
+                height: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #2fab73;
+                border-radius: 100%;
+                color: #ffffff;
+            }
+
+            .icon--text {
+                font-size: 14px;
+                color: $text-color;
+            }
+        }
+    }
+}
