@@ -14,9 +14,13 @@
         color: $text-color;
     }
 
+    .menu__item {
+        color: $text-color;
+    }
+
     .menu__item:hover {
         color: $primary-color;
-        transition: 0.3 ease-in;
+        transition: $transition-delay;
         cursor: pointer;
     }
 

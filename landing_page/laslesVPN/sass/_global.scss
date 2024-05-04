@@ -49,11 +49,15 @@ button {
         color: #fff;
         font-weight: 500;
         border: 1px solid;
-        transition: 0.3 ease-in-out;
+        transition: $transition-delay;
     }
     &--rounded {
         border-radius: 10px;
         padding: 17px 65px;
+    }
+    &--rounded:hover {
+        background-color: $primary-color-hover;
+        transition: $transition-delay;
     }
     &--shadow {
         position: relative;
