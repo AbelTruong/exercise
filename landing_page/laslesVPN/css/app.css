@@ -124,6 +124,22 @@ button {
   border-radius: inherit;
 }
 
+.button:hover {
+  position: relative;
+}
+.button:hover:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 90%;
+  height: 100%;
+  transform: translate(-50%, 50%);
+  background-color: rgba(245, 56, 56, 0.35);
+  filter: blur(54px);
+  border-radius: inherit;
+}
+
 @media screen and (max-width: 767px) {
   .button {
     padding: 13px 26px;
@@ -282,6 +298,82 @@ button {
 .feature--details .feature__item .icon--text {
   font-size: 14px;
   color: #4f5665;
+}
+
+.plan__container {
+  padding: 30px 0;
+  background-color: #f6f6f6;
+}
+.plan__container .plan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.plan__container .plan__heading {
+  color: #0b132a;
+  font-size: 35px;
+  font-weight: normal;
+  padding: 20px 0;
+}
+.plan__container .plan__desc {
+  width: 100%;
+  max-width: 555px;
+  color: #4f5665;
+  line-height: 1.5;
+  text-align: center;
+}
+.plan__container .plan__card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2%;
+  padding: 30px 0;
+}
+.plan__container .plan__card .card__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 70px 70px 50px 70px;
+  border: 2px solid #ddd;
+}
+.plan__container .plan__card .card__item .plan__title {
+  color: #0b132a;
+  font-size: 18px;
+  padding: 30px 0;
+}
+.plan__container .plan__card .card__item .plan__details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+  flex: 1;
+}
+.plan__container .plan__card .card__item .plan__details .plan__text {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  font-size: 14px;
+}
+.plan__container .plan__card .card__item .plan__details .plan__text > span {
+  color: teal;
+}
+.plan__container .plan__card .card__item .plan__icon {
+  max-width: 145px;
+}
+.plan__container .plan__card .card__item .plan__select {
+  text-align: center;
+  padding-top: 30px;
+}
+.plan__container .plan__card .card__item .plan__select .text {
+  color: #0b132a;
+  padding-bottom: 20px;
+}
+.plan__container .plan__card .card__item:hover {
+  border: 2px solid #f53838;
+  transition: all 0.3s ease-in-out;
 }
 
 /*# sourceMappingURL=app.css.map */

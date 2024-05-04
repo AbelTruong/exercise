@@ -1,0 +1,88 @@
+.plan__container {
+    padding: 30px 0;
+    background-color: #f6f6f6;
+
+    .plan {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__heading {
+            color: $heading-color;
+            font-size: 35px;
+            font-weight: normal;
+            padding: 20px 0;
+        }
+
+        &__desc {
+            width: 100%;
+            max-width: 555px;
+            color: $text-color;
+            line-height: calc(3 / 2);
+            text-align: center;
+        }
+
+        &__card {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 2%;
+            padding: 30px 0;
+
+            .card__item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-radius: 10px;
+                background-color: #fff;
+                padding: 70px 70px 50px 70px;
+                border: 2px solid #ddd;
+
+                .plan__title {
+                    color: $heading-color;
+                    font-size: 18px;
+                    padding: 30px 0;
+                }
+
+                .plan__details {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px 0;
+                    flex: 1;
+
+                    .plan__text {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 30px;
+                        font-size: 14px;
+
+                        >span {
+                            color: teal;
+                        }
+                    }
+                }
+
+                .plan__icon {
+                    max-width: 145px;
+                }
+
+                .plan__select {
+                    text-align: center;
+                    padding-top: 30px;
+
+                    .text {
+                        color: $heading-color;
+                        padding-bottom: 20px;
+                    }
+                }
+            }
+
+            .card__item:hover {
+                border: 2px solid $primary-color;
+                transition: $transition-delay;
+            }
+        }
+    }
+}
