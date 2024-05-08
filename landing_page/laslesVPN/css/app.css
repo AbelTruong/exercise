@@ -145,14 +145,21 @@ button {
     padding: 13px 26px;
   }
 }
-.header {
+.header__container {
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  z-index: 9;
+}
+.header__container .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-top: 40px;
 }
-.header__navigate {
+.header__container .header__navigate {
   display: flex;
   flex-direction: row;
   gap: 0 40px;
@@ -160,21 +167,21 @@ button {
   font-size: 16px;
   color: #4f5665;
 }
-.header .menu__item {
+.header__container .header .menu__item {
   color: #4f5665;
 }
-.header .menu__item:hover {
+.header__container .header .menu__item:hover {
   color: #f53838;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
-.header__auth {
+.header__container .header__auth {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0 30px;
 }
-.header__auth .header_signin {
+.header__container .header__auth .header_signin {
   font-weight: 400;
   color: #0b132a;
 }

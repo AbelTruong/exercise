@@ -1,38 +1,47 @@
-.header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 40px;
+.header__container {
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    z-index: 9;
 
-    &__navigate {
+
+    .header {
         display: flex;
         flex-direction: row;
-        gap: 0 40px;
-        font-weight: normal;
-        font-size: 16px;
-        color: $text-color;
-    }
-
-    .menu__item {
-        color: $text-color;
-    }
-
-    .menu__item:hover {
-        color: $primary-color;
-        transition: $transition-delay;
-        cursor: pointer;
-    }
-
-    &__auth {
-        display: flex;
-        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        gap: 0 30px;
-
-        .header_signin {
-            font-weight: 400;
-            color: $heading-color;
+        
+        &__navigate {
+            display: flex;
+            flex-direction: row;
+            gap: 0 40px;
+            font-weight: normal;
+            font-size: 16px;
+            color: $text-color;
+        }
+        
+        .menu__item {
+            color: $text-color;
+        }
+        
+        .menu__item:hover {
+            color: $primary-color;
+            transition: $transition-delay;
+            cursor: pointer;
+        }
+        
+        &__auth {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0 30px;
+            
+            .header_signin {
+                font-weight: 400;
+                color: $heading-color;
+            }
         }
     }
 }
