@@ -1,0 +1,46 @@
+.arc-preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.arc-preloader img {
+  width: 150px;
+  height: auto;
+}
+
+.arc-preloader #arc-loading-bar {
+  width: 200px;
+  height: 60px;
+  position: relative;
+}
+
+.arc-preloader .mainline {
+  position: absolute;
+  top: calc(50% - 6px);
+  left: 0;
+  z-index: 2;
+  width: 10%;
+  height: 12px;
+  border-radius: 6px;
+  background-color: #31373d;
+  transition: width 1s;
+}
+
+.arc-preloader .baseline {
+  position: absolute;
+  top: calc(50% - 6px);
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 12px;
+  border-radius: 6px;
+  background-color: rgba(49, 55, 61, 0.8);
+}

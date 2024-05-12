@@ -1,0 +1,12 @@
+{
+  "name": "fullstack-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd frontend/ && npm run build",
+    "serve": "cd backend/ && npm run serve"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  }
+}

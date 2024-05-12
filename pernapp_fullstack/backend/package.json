@@ -1,0 +1,35 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js",
+    "serve": "nodemon app.js",
+    "mockup": "node src/mockup/index.js"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "cloudinary": "^1.30.0",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "16.0.0",
+    "express": "~4.16.1",
+    "fs": "^0.0.1-security",
+    "http-errors": "~1.6.3",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.19",
+    "path": "^0.12.7",
+    "pg": "^8.7.3",
+    "pug": "2.0.0-beta11",
+    "query-string": "^7.1.1",
+    "sequelize": "^6.21.2",
+    "url": "^0.11.0"
+  }
+}

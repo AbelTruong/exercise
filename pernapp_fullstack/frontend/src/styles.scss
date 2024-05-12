@@ -1,0 +1,139 @@
+:root {
+  --textColor: #454f5b;
+  --noteColor: #5b6878;
+  --linkColor: #006fbb;
+  --linkColorHover: #084e8a;
+  --linkColorDark: #084e8a;
+  --successColor: #008060;
+  --successColorDark: #005e46;
+  --errorColor: #d82c0d;
+  --errorColorDark: #a8220a;
+  --warningColor: #ffc453;
+  --warningColorDark: #ffb320;
+
+  --border: 1px solid #dcdcdc;
+  --borderWidth: 1px;
+  --borderColor: #dcdcdc;
+  --borderStyle: solid;
+
+  --spacing: 1em;
+  --spacingSmall: 0.5em;
+  --spacingLarge: 2em;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+b {
+  font-weight: 600 !important;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+// color
+.color {
+  &__text {
+    color: var(--textColor) !important;
+
+    .Polaris-Icon {
+      margin: unset;
+
+      svg {
+        fill: var(--textColor);
+      }
+    }
+  }
+
+  &__note {
+    color: var(--noteColor) !important;
+
+    .Polaris-Icon {
+      margin: unset;
+
+      svg {
+        fill: var(--noteColor);
+      }
+    }
+  }
+
+  &__success {
+    color: var(--successColor) !important;
+
+    .Polaris-Icon {
+      margin: unset;
+
+      svg {
+        fill: var(--successColor);
+      }
+    }
+  }
+
+  &__error {
+    color: var(--errorColor) !important;
+
+    .Polaris-Icon {
+      margin: unset;
+
+      svg {
+        fill: var(--errorColor);
+      }
+    }
+  }
+
+  &__warning {
+    color: var(--warningColor) !important;
+
+    .Polaris-Icon {
+      margin: unset;
+
+      svg {
+        fill: var(--warningColor);
+      }
+    }
+  }
+
+  &__link {
+    color: var(--linkColor) !important;
+
+    .Polaris-Icon {
+      margin: unset;
+
+      svg {
+        fill: var(--linkColor);
+      }
+    }
+  }
+}
+
+/* CUSTOM POLARIS STYLES */
+.Polaris-DataTable {
+  table {
+    thead {
+      background-color: #f1f1f1;
+
+      th {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.test {
+  background-color: red;
+}
