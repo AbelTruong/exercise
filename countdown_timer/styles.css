@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.contain {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hello__world {
+    margin: auto;
+    padding-top: 20px;
+    color: red;
+}
+
+#countdown {
+    width: 100%;
+}
+
+#countdown_timer {
+    background-color: teal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 20px 0;
+    color: #fff;
+}
