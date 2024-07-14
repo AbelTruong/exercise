@@ -1,0 +1,23 @@
+<h1 style="padding: 10px">{{ section.settings.text }}</h1>
+
+{% schema %}
+{
+  "name": "Social",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text title"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Social",
+      "settings": {
+        "text": "Social"
+      }
+    }
+  ]
+}
+{% endschema %}

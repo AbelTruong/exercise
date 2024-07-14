@@ -1,0 +1,19 @@
+{
+    "name": "Special section",
+    "type": "custom.special",
+    "sections": {
+        "custom-social": {
+            "type": "custom-social",
+            "settings": {
+                "text": "Hello, testing group sections"
+            }
+        },
+        "custom-section": {
+            "type": "custom-section",
+            "settings": {
+                "text": "Coding with Abel"
+            }
+        }
+    },
+    "order": ["custom-social", "custom-section"]
+}
