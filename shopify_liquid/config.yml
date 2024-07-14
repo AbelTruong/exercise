@@ -1,0 +1,6 @@
+development:
+  password: shptka_4fb8a397ab310112cac53d57ea536a0d
+  theme_id: "169369403688"
+  store: abel-boutique-shop.myshopify.com
+  ignore_files:
+  - config/settings_data.json
