@@ -1,0 +1,125 @@
+{%- stylesheet -%}
+  .custom-section {
+    background-color: #fff;
+    padding: 60px;
+  }
+{%- endstylesheet -%}
+
+{%- javascript -%}
+  console.log('This is console.log');
+{%- endjavascript -%}
+
+<div
+  class="wrapper"
+  style="color: {{ section.settings.textColor }}; padding: {{ section.settings.padding }}; background-color: {{ section.settings.backgroundColor }}"
+>
+  <div class="">{{ section.settings.text }}</div>
+
+  <div class="social">
+    {% for block in section.blocks %}
+      <div class="">
+        <a href="{{ block.settings.url }}">{{ block.settings.text }}</a>
+      </div>
+      {% if block.type == 'description' %}
+        <p>{{ block.settings.description }}</p>
+      {% endif %}
+      {% if block.type == '@app' %}
+        {% render block %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom section",
+  "tag": "div",
+  "class": "custom-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Title"
+    },
+    {
+      "type": "color",
+      "id": "textColor",
+      "label": "Choose your text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "backgroundColor",
+      "label": "Choose your background color",
+      "default": "#fff"
+    },
+    {
+      "type": "number",
+      "id": "padding",
+      "label": "set your padding",
+      "default": 20
+    }
+  ],
+  "limit": 2,
+  "blocks": [
+    {
+      "name": "Social Link",
+      "type": "social",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Title URL"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Enter URL"
+        }
+      ]
+    },
+    {
+      "name": "Description",
+      "type": "description",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Default section",
+      "settings": {
+        "text": "Default text"
+      },
+      "blocks": [
+        {
+          "type": "social",
+          "settings": {
+            "text": "Facebook",
+            "url": "https://facebook.com"
+          }
+        },
+        {
+          "type": "description"
+        }
+      ]
+    },
+    {
+      "name": "Custom section",
+      "settings": {
+        "text": "Custom title here"
+      }
+    }
+  ]
+}
+{% endschema %}
