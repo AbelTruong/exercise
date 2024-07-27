@@ -1,0 +1,64 @@
+.seo-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.seo-banner img {
+    width: 100%;
+}
+
+.seo-banner .first__item {
+    position: relative;
+    width: 100%;
+}
+
+.seo-banner .first__item button {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    cursor: pointer;
+    background-color: teal;
+    color: white;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 12px 20px;
+}
+
+.seo-banner .first__item:hover button {
+    background-color: rgb(3, 160, 160);
+    animation: all 1s ease-in;
+}
+
+.seo-banner .second__item {
+    position: relative;
+    width: 100%;
+}
+
+.seo-banner .second__item button {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    cursor: pointer;
+    background-color: teal;
+    color: white;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 12px 20px;
+}
+
+.seo-banner .second__item:hover button {
+    background-color: rgb(3, 160, 160);    
+    animation: all 1s ease-in;
+}
+
+@media only screen and (max-width: 990px) {
+    .seo-banner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+    }
+}

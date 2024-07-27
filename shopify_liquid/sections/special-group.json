@@ -13,7 +13,11 @@
             "settings": {
                 "text": "Coding with Abel"
             }
+        },
+        "seo-banner" : {
+            "type": "seo-banner",
+            "settings": {}
         }
     },
-    "order": ["custom-social", "custom-section"]
+    "order": ["custom-social", "custom-section", "seo-banner"]
 }

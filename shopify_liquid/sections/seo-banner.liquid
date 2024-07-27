@@ -1,0 +1,63 @@
+{{ 'component-seo-banner.css' | asset_url | stylesheet_tag }}
+
+{% assign first_button = section.settings.first_button %}
+{% assign second_button = section.settings.second_button %}
+
+<div class="seo-banner">
+  <div class="first__item">
+    <img
+      src="{{ section.settings.first_image | image_url: width: 300 }}"
+      width="auto"
+      height="auto"
+      alt=""
+    >
+
+    <button>{{ first_button }}</button>
+  </div>
+  <div class="second__item">
+    <img
+      src="{{ section.settings.second_image | image_url: width: 300 }}"
+      width="auto"
+      height="auto"
+      alt=""
+    >
+    <button>{{ second_button }}</button>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Seo banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "first_button",
+      "label": "First button name",
+      "default": "Shop now"
+    },
+    {
+      "type": "image_picker",
+      "id": "first_image",
+      "label": "Choose first image"
+    },
+    {
+      "type": "text",
+      "id": "second_button",
+      "label": "Second button name",
+      "default": "Shop now"
+    },
+    {
+      "type": "image_picker",
+      "id": "second_image",
+      "label": "Choose second image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Seo banner",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
