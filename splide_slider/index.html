@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Splide -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
+    <!-- Glide.js CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.2/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.2/dist/css/glide.theme.min.css">
+    <style>
+        .glide__slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            background-color: #ccc;
+        }
+    </style>
+
+    <style>
+        .slider__section {
+            background-color: teal;
+            padding: 20px 0;
+            margin: 0 100px;
+        }
+
+        .slider__item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1409ec;
+            padding: 10px 20px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="splide">
+        <div class="splide__track slider__section">
+            <ul class="splide__list">
+                <li class="splide__slide slider__item" data-splide-interval="2000">Slide 01</li>
+                <li class="splide__slide slider__item" data-splide-interval="2000">Slide 02</li>
+                <li class="splide__slide slider__item" data-splide-interval="2000">Slide 03</li>
+                <li class="splide__slide slider__item" data-splide-interval="2000">Slide 04</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="" style="font-size:22px;padding:20px">padding</div>
+
+    <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                <li class="glide__slide">Slide 1</li>
+                <li class="glide__slide">Slide 2</li>
+                <li class="glide__slide">Slide 3</li>
+                <li class="glide__slide">Slide 4</li>
+                <li class="glide__slide">Slide 5</li>
+                <li class="glide__slide">Slide 6</li>
+                <li class="glide__slide">Slide 7</li>
+                <li class="glide__slide">Slide 8</li>
+            </ul>
+        </div>
+
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">P</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">N</button>
+        </div>
+    </div>
+
+    <script>
+        var splide = new Splide('.splide', {
+            type: 'loop',
+            perPage: 1,
+            autoplay: true,
+        });
+        var bar = splide.root.querySelector('.my-carousel-progress-bar');
+
+        splide.on('mounted move', function () {
+            var end = splide.Components.Controller.getEnd() + 1;
+            var rate = Math.min((splide.index + 1) / end, 1);
+            bar.style.width = String(100 * rate) + '%';
+        });
+        splide.mount();
+    </script>
+
+    <!-- Glide.js JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.2/dist/glide.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Glide('.glide', {
+                type: 'carousel',
+                startAt: 0,
+                perView: 4.3,
+                breakpoints: {
+                    576: {
+                        perView: 1
+                    },
+                    992: {
+                        perView: 2.3
+                    },
+                    1441: {
+                        perView: 4.3
+                    }
+                }
+            }).mount();
+        });
+    </script>
+</body>
+
+</html>
