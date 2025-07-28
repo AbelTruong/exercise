@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Cart Drawer Example with Pub/Sub + ATC + Remove</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        .cart-item {
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .qty-btn,
+        .atc-btn,
+        .remove-btn {
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .atc-btn {
+            padding: 8px 12px;
+            background: teal;
+            color: white;
+            border: none;
+            margin: 0 0 20px;
+
+        }
+
+        .remove-btn {
+            padding: 4px 8px;
+            background: #dc3545;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🛒 Cart Drawer</h1>
+    <button class="atc-btn" id="atc-button">Add Default Product</button>
+
+    <div id="cart-items"></div>
+
+    <script>
+        // ----- PubSub -----
+        const PubSub = {
+            events: {},
+            subscribe(event, callback) {
+                if (!this.events[event]) this.events[event] = [];
+                this.events[event].push(callback);
+            },
+            publish(event, data) {
+                // loại bỏ nếu event chưa được đăng ký
+                if (!this.events[event]) return;
+                this.events[event].forEach(callback => callback(data));
+            }
+        };
+            console.log("🚀 ~ PubSub.events:", PubSub.events)
+
+        const EVENTS = {
+            CART_UPDATED: 'cart:updated',
+            QTY_CHANGED: 'cart:qty-changed',
+            PRODUCT_ADDED: 'cart:product-added',
+            ITEM_REMOVED: 'cart:item-removed'
+        };
+
+        // ----- CartItems class -----
+        class CartItems {
+            constructor(data) {
+                this.data = data;
+            }
+
+            updateItem(id, newQty) {
+                const item = this.data.find(i => i.id === id);
+                if (item) {
+                    item.quantity = newQty;
+                    PubSub.publish(EVENTS.CART_UPDATED, this.data);
+                }
+            }
+
+            addItem(newItem) {
+                const existing = this.data.find(i => i.id === newItem.id);
+                if (existing) {
+                    existing.quantity += newItem.quantity;
+                } else {
+                    this.data.push(newItem);
+                }
+                PubSub.publish(EVENTS.CART_UPDATED, this.data);
+            }
+
+            removeItem(id) {
+                this.data = this.data.filter(i => i.id !== id);
+                PubSub.publish(EVENTS.CART_UPDATED, this.data);
+            }
+
+            getItems() {
+                return this.data;
+            }
+        }
+
+        // ----- CartDrawerItems class -----
+        class CartDrawerItems {
+            constructor(container, cartItemsInstance) {
+                this.container = container;
+                this.cartItems = cartItemsInstance;
+
+                PubSub.subscribe(EVENTS.CART_UPDATED, (data) => {
+                    this.render(data);
+                });
+
+                this.render(this.cartItems.getItems());
+            }
+
+            render(items) {
+                this.container.innerHTML = '';
+                items.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'cart-item';
+                        div.innerHTML = `
+                            <strong>${item.title}</strong><br />
+                            Quantity: <span class="qty">${item.quantity}</span>
+                            <button class="qty-btn" data-id="${item.id}" data-change="-1">-</button>
+                            <button class="qty-btn" data-id="${item.id}" data-change="1">+</button>
+                            <button class="remove-btn" data-id="${item.id}">✕</button>
+                        `;
+                    this.container.appendChild(div);
+                });
+
+                // quantity buttons
+                this.container.querySelectorAll('.qty-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.dataset.id;
+                        const change = parseInt(btn.dataset.change, 10);
+                        const currentQty = this.cartItems.getItems().find(i => i.id === id).quantity;
+                        const newQty = Math.max(0, currentQty + change);
+                        PubSub.publish(EVENTS.QTY_CHANGED, { id, newQty });
+                    });
+                });
+
+                // remove buttons
+                this.container.querySelectorAll('.remove-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.dataset.id;
+                        PubSub.publish(EVENTS.ITEM_REMOVED, { id });
+                    });
+                });
+            }
+        }
+
+        // ----- Init -----
+        document.addEventListener('DOMContentLoaded', () => {
+            let mockCartData = [
+                { id: 'p1', title: 'Product 1', quantity: 1 },
+                { id: 'p2', title: 'Product 2', quantity: 2 }
+            ];
+
+            const cartItems = new CartItems(mockCartData);
+            new CartDrawerItems(document.getElementById('cart-items'), cartItems);
+
+            // Quantity changed
+            PubSub.subscribe(EVENTS.QTY_CHANGED, ({ id, newQty }) => {
+                cartItems.updateItem(id, newQty);
+            });
+
+            // Item removed
+            PubSub.subscribe(EVENTS.ITEM_REMOVED, ({ id }) => {
+                cartItems.removeItem(id);
+            });
+
+            // Add default product
+            document.getElementById('atc-button').addEventListener('click', () => {
+                const id = `newProduct-${Date.now()}`;
+                console.log("🚀 ~ id:", id)
+                const newProduct = {
+                    id: id,
+                    title: `Product (Default - ${id})`,
+                    quantity: 1
+                };
+                cartItems.addItem(newProduct);
+            });
+        });
+    </script>
+</body>
+
+</html>
