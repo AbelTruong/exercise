@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.css" rel="stylesheet" />
+
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #000;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-container {
+            overflow: hidden;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+
+            @media (min-width: 480px) {
+                min-height: 320px;
+            }
+
+            &-wrapper {
+                display: flex;
+                flex-flow: column nowrap;
+
+                @media (min-width: 480px) {
+                    flex-flow: row nowrap;
+                }
+
+                height: 100vh;
+                width: 100vw;
+            }
+        }
+
+        .swiper-button {
+
+            &-next,
+            &-prev {
+                color: #000;
+            }
+        }
+
+        .swiper-slide {
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            background-color: #fff;
+
+            /* Center slide text vertically */
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+
+            /* Slide content */
+            .description,
+            .title {
+                display: block;
+                opacity: 0;
+                transition: 0.5s ease 0.5s;
+            }
+
+            &-active {
+
+                .description,
+                .title {
+                    opacity: 1;
+                }
+
+                .title {
+                    margin-bottom: 0.5rem;
+                    font-size: 24px;
+                    color: #000;
+                    transition: opacity 0.5s ease 0.5s;
+                }
+
+                .description {
+                    font-size: 16px;
+                    color: #777;
+                    transition: opacity 0.5s ease 0.75s;
+                }
+            }
+        }
+
+        .gallery-top {
+            position: relative;
+            width: 100%;
+            height: 75vh;
+
+            @media (min-width: 480px) {
+                width: 80%;
+                height: 100vh;
+                margin-right: 10px;
+            }
+        }
+
+        .gallery-thumbs {
+            width: 100%;
+            height: 25vh;
+            padding-top: 10px;
+
+            @media (min-width: 480px) {
+                width: 20%;
+                height: 100vh;
+                padding: 0;
+            }
+
+            .swiper-wrapper {
+                flex-direction: row;
+
+                @media (min-width: 480px) {
+                    flex-direction: column;
+                }
+            }
+
+            .swiper-slide {
+                width: 25%;
+                flex-flow: row nowrap;
+
+                @media (min-width: 480px) {
+                    flex-flow: column nowrap;
+                    width: 100%;
+                }
+
+                height: 100%;
+                opacity: 0.75;
+                cursor: pointer;
+            }
+
+            .swiper-slide-thumb-active {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Slider main wrapper -->
+    <div class="swiper-container-wrapper">
+        <!-- Slider main container -->
+        <div class="swiper-container gallery-top">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="title">Responsive vertical thumbnail gallery</div>
+                    <div class="description">Scale screen to see effect</div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="title">Slide 2</div>
+                    <div class="description">Lorem ipsum dolor sit amet</div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="title">Slide 3</div>
+                    <div class="description">Lorem ipsum dolor sit amet</div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="title">Slide 4</div>
+                    <div class="description">Lorem ipsum dolor sit amet</div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="title">Slide 5</div>
+                    <div class="description">Lorem ipsum dolor sit amet</div>
+                </div>
+                <div class="swiper-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1675789652617-d84e3d201ef4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80');">
+                    <div class="title">Slide 6</div>
+                    <div class="description">Lorem ipsum dolor sit amet</div>
+                </div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <!-- Slider thumbnail container -->
+        <div class="swiper-container gallery-thumbs">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1669327195331-cd47e0d5eef0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=100');">
+                </div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1675789652617-d84e3d201ef4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80');">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            var galleryThumbs = new Swiper(".gallery-thumbs", {
+                centeredSlides: true,
+                centeredSlidesBounds: true,
+                direction: "horizontal",
+                spaceBetween: 10,
+                slidesPerView: 3,
+                freeMode: false,
+                watchSlidesVisibility: true,
+                watchSlidesProgress: true,
+                watchOverflow: true,
+                breakpoints: {
+                    480: {
+                        direction: "vertical",
+                        slidesPerView: 3
+                    }
+                }
+            });
+            var galleryTop = new Swiper(".gallery-top", {
+                direction: "horizontal",
+                spaceBetween: 10,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                },
+                a11y: {
+                    prevSlideMessage: "Previous slide",
+                    nextSlideMessage: "Next slide",
+                },
+                keyboard: {
+                    enabled: true,
+                },
+                thumbs: {
+                    swiper: galleryThumbs
+                }
+            });
+            galleryTop.on("slideChangeTransitionStart", function () {
+                galleryThumbs.slideTo(galleryTop.activeIndex);
+            });
+            galleryThumbs.on("transitionStart", function () {
+                galleryTop.slideTo(galleryThumbs.activeIndex);
+            });
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</body>
+
+</html>
